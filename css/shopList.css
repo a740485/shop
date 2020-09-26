@@ -1,0 +1,72 @@
+.shopList{
+    background-color: #e7e5e5;
+    padding: 50px 0;
+}
+
+.shopList .wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shopList .shop-box{
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    padding: 0 5px;
+    height: 285px;
+    text-decoration: none;
+    color: black;
+}
+
+.shopList .shop-box:hover{
+    top: -10px;
+}
+
+.shopList .shop-box:hover::before{
+    position: absolute;
+    content: '';
+    width: 187px;
+    height: 270px;
+    /* background-color: black; */
+    border: 3px solid orangered;
+}
+
+.shopList img{
+    background-color: white;
+    width: 188px;
+    height: 188px;
+}
+
+.shopList .detail{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 188px;
+    height: 85px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.shopList .detail .title{
+    width: 100%;
+    height: 32px;
+    line-height: 18px;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    
+
+}
+
+.shopList .detail .info{
+    display: flex;
+    height: calc(100% - 32px);
+    align-items: flex-end;
+    justify-content: space-between;
+}
