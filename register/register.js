@@ -34,7 +34,7 @@ $(document).ready(function () {
         if(checkOK){
             $.ajax({
                 type: "POST",
-                url: "http://localhost/shopBackend/route.php/user/create",
+                url: host+"/shopBackend/route.php/user/create",
                 data: data,
                 header:{
                     'Authorization': ""

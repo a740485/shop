@@ -27,7 +27,7 @@ $(document).ready(function () {
 
             $.ajax({
                 type: "get",
-                url: "http://localhost/shopBackend/route.php/user/login?"+ urlParam,
+                url: host+"/shopBackend/route.php/user/login?"+ urlParam,
                 success: function (response) {
                     try {
 
@@ -45,6 +45,7 @@ $(document).ready(function () {
 
 
                     } catch (error) {
+                        alert("帳號或密碼錯誤")
                         console.log(error)
                     }
                     
@@ -57,6 +58,7 @@ $(document).ready(function () {
             
 
         } catch (error) {
+            alert("請輸入帳號密碼")
             console.log(error);
         }
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../css/nav.css" />
+        <link rel="stylesheet" href="product.css" />
+        <link rel="stylesheet" href="./../css/footer.css" />
+        <script src="https://use.fontawesome.com/fcfc546709.js"></script>
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-3.3.1.js"
+        ></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    </head>
+    <body>
+        <nav>
+            <div class="wrap">
+                <a class="logo" href="/">
+                    <img src="/img/logo.png" />
+                </a>
+                <div class="search-box">
+                    <input class="search" type="text" placeholder="搜尋" />
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+                <a href="#cart" class="cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a>
+
+                <!-- <a class="link" href="/register">註冊</a>
+            <a class="link" href="/login">登入</a> -->
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="wrap">
+                <div class="left">
+                    <img
+                        id="product_img"
+                        src="https://picsum.photos/450/450/?random=3"
+                        alt=""
+                    />
+                </div>
+                <div class="right">
+                    <h1 id="product_title" class="box">
+                        【DIFF】韓版寬鬆可愛保暖毛毛絨小熊大學t 長袖上衣 長袖t恤
+                        衣服 寬鬆上衣 素T 素色 冬天 帽t【W160】
+                    </h1>
+
+                    <h2 class="box">
+                        <label>價格</label>
+                        <p id="product_price" class="price">200</p>
+                    </h2>
+
+                    <div class="box">
+                        <label>加購價</label>
+                        <span>加購價</span>
+                    </div>
+                    <div class="box amount">
+                        <label for="num">數量</label>
+                        <button class="amount_dec">-</button>
+                        <input
+                            id="product_amount"
+                            type="text"
+                            id="num"
+                            value="1"
+                            oninput="value=value.replace(/[^\d]/g,'')"
+                        />
+                        <button class="amount_inc">+</button>
+                    </div>
+                    <div class="box cart">
+                        <button class="add-cart">加入購物車</button>
+                        <button class="buy">直接購買</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="wrap">Footer</div>
+        </footer>
+
+        <script src="../js/config.js"></script>
+        <script src="./product.js"></script>
+    </body>
+</html>
+
+<!-- https://picsum.photos/188/188/?random=2 -->

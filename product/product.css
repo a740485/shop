@@ -1,0 +1,99 @@
+.content {
+    background-color: rgb(241, 241, 241);
+    padding: 50px 0;
+    height: 750px;
+}
+
+.content .wrap {
+    background-color: white;
+    height: 100%;
+    display: flex;
+}
+
+.content .wrap > .left {
+    width: 40%;
+    height: 100%;
+    padding: 15px;
+}
+
+.content .wrap .left > img {
+    height: 450px;
+    width: 450px;
+}
+
+.content .wrap > .right {
+    height: 100%;
+    width: 60%;
+    padding: 15px 30px;
+    /* background-color: turquoise; */
+    display: flex;
+    flex-direction: column;
+}
+
+.right .price {
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: red;
+}
+
+.content .wrap .right > h1 {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.content .wrap .right > .box {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    min-height: 62px;
+}
+
+.content .wrap .right label {
+    width: 100px;
+    color: rgb(182, 182, 182);
+}
+
+.content .wrap .right .amount > input {
+    width: 50px;
+    height: 32px;
+    background-color: white;
+    border: none;
+    border-top: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    font-size: 15px;
+    text-align: center;
+}
+
+button {
+    outline: none;
+}
+
+.content .wrap .right .amount > button {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid #aaaaaa;
+}
+
+.content .wrap .right .cart button {
+    height: 50px;
+    width: 180px;
+    border: 1px solid #ee4d2d;
+    border-radius: 5px;
+}
+.content .wrap .right .cart > .add-cart {
+    background-color: rgba(208, 1, 27, 0.08);
+    color: rgb(255, 103, 103);
+}
+.content .wrap .right .cart > .add-cart:hover {
+    background-color: rgba(252, 182, 182, 0.952);
+}
+.content .wrap .right .cart > .buy {
+    margin-left: 20px;
+    background-color: rgb(209, 0, 0);
+    color: white;
+}
+.content .wrap .right .cart > .buy:hover {
+    background-color: rgba(255, 0, 0, 0.911);
+}
