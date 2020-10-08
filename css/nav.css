@@ -4,19 +4,19 @@ nav {
     background-color: rgb(10, 172, 221);
 }
 
-nav .wrap{
+nav .wrap {
     display: flex;
     align-items: center;
 }
 
-nav .logo{
+nav .logo {
     box-sizing: border-box;
     width: 250px;
     /* padding-left: 20px; */
     padding-right: 50px;
 }
 
-nav .search-box{
+nav .search-box {
     box-sizing: border-box;
     position: relative;
     display: flex;
@@ -27,7 +27,7 @@ nav .search-box{
     border-radius: 5px;
 }
 
-nav .search-box .search{
+nav .search-box .search {
     height: 100%;
     width: 100%;
     max-width: calc(100% - 65px);
@@ -36,11 +36,12 @@ nav .search-box .search{
     padding: 0;
     font-size: 30px;
 }
-::-webkit-input-placeholder { /* Chrome, Safari */
+::-webkit-input-placeholder {
+    /* Chrome, Safari */
     color: rgb(204, 198, 198);
     font-size: 20px;
 }
-nav .search-box .fa{
+nav .search-box .fa {
     position: absolute;
     right: 5px;
     top: 0;
@@ -59,11 +60,11 @@ nav .search-box .fa{
     color: white;
 }
 
-nav .search-box .fa:hover{
+nav .search-box .fa:hover {
     background-color: rgba(241, 160, 9, 0.918);
 }
 
-nav .cart{
+nav .cart {
     box-sizing: border-box;
     padding: 0 10px 0;
     width: 100px;
@@ -76,7 +77,7 @@ nav .cart{
     margin-right: 10px;
 }
 
-nav .user{
+nav .user {
     position: relative;
     box-sizing: border-box;
     margin-right: 20px;
@@ -85,7 +86,7 @@ nav .user{
     color: white;
 }
 
-nav .link{
+nav .link {
     position: relative;
     box-sizing: border-box;
     font-size: 20px;
@@ -93,19 +94,24 @@ nav .link{
     color: white;
 }
 
-nav .link:hover{
-    color: rgba(255, 255, 255, 0.712)
+nav .link:hover {
+    color: rgba(255, 255, 255, 0.712);
 }
 
-nav .link + .link{
+nav .link + .link {
     margin-left: 20px;
 }
 
-nav .link + .link::before{
-    content: '';
+nav .link + .link::before {
+    content: "";
     height: 19px;
     width: 1px;
     background-color: white;
     position: absolute;
     left: -10px;
+}
+
+nav .logout,
+nav .user {
+    cursor: default;
 }

@@ -1,29 +1,9 @@
 $(document).ready(function () {
     console.log("product.js ready");
 
-    let loginUser = getCookie("username");
-
-    if (loginUser == "" || loginUser == null) {
-        console.log("沒登入");
-        $("nav .wrap").append("<a class='link' href='/register'>註冊</a>");
-        $("nav .wrap").append("<a class='link' href='/login'>登入</a>");
-    } else {
-        console.log("login seccess");
-        $("nav .wrap").append(
-            "<p class='user'>" + $.cookie("username") + "</p>"
-        );
-        $("nav .wrap").append("<p class='link logout'>登出</p>");
-    }
-
-    $("nav .logout").click(function () {
-        console.log("logout clicked");
-        console.log($.cookie("username"));
-        $.cookie("username", "");
-        window.location.replace("/");
-    });
-
+    let loginUser = login_system();
     // product init
-    productData();
+    let product_id = productData();
 
     $(".amount_dec").click(function () {
         let amount = $("#product_amount").val();
@@ -36,6 +16,45 @@ $(document).ready(function () {
         let amount = $("#product_amount").val();
         $("#product_amount").val(++amount);
     });
+
+    // 新增購物車
+    $(".content .add-cart").click(function () {
+        if (loginUser == "" || loginUser == null || !loginUser) {
+            alert("尚未登入,請先登入");
+            return;
+        }
+
+        let data = {
+            user_id: loginUser,
+            product_id: product_id,
+        };
+
+        $.ajax({
+            type: "POST",
+            url: host + "/shopBackend/route.php/cart",
+            data: data,
+            success: function (res) {
+                try {
+                    if (res.Status != 200) {
+                        throw "not 200";
+                    }
+
+                    console.log(res.Result.IsOK);
+                    if (!res.Result.IsOK) {
+                        throw "not ok";
+                    }
+                    alert("新增成功");
+                } catch (error) {
+                    console.log(error);
+                    alert("新增失敗或購物車已擁有");
+                }
+            },
+            error: function (res) {
+                console.log("add cart error");
+                throw "伺服器發生錯誤: " + res;
+            },
+        });
+    });
 });
 
 function productData() {
@@ -46,9 +65,10 @@ function productData() {
     for (let i of url_arr) {
         product[i.split("=")[0]] = i.split("=")[1];
     }
+    var id = product.product;
 
     $.ajax({
-        url: host + "/shopBackend/route.php/product/" + product.product,
+        url: host + "/shopBackend/route.php/product/" + id,
         success: function (response) {
             try {
                 if (response.Status != 200) {
@@ -66,6 +86,8 @@ function productData() {
             }
         },
     });
+
+    return id;
 }
 
 function getCookie(cname) {
@@ -76,4 +98,30 @@ function getCookie(cname) {
         if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
     }
     return "";
+}
+
+function login_system() {
+    let loginUser = getCookie("username");
+    console.log(loginUser);
+    console.log("登入狀態：" + loginUser);
+    if (loginUser == "" || loginUser == null) {
+        console.log("沒登入");
+        $("nav .wrap").append("<a class='link' href='/register'>註冊</a>");
+        $("nav .wrap").append("<a class='link' href='/login'>登入</a>");
+    } else {
+        console.log("login seccess");
+        $("nav .wrap").append(
+            "<p class='user'>" + $.cookie("username") + "</p>"
+        );
+        $("nav .wrap").append("<p class='link logout'>登出</p>");
+    }
+
+    $("nav .logout").click(function () {
+        console.log("logout clicked");
+        console.log($.cookie("username"));
+        document.cookie = "username=" + "" + ";path=/";
+        // window.location.replace("/");
+    });
+
+    return loginUser;
 }

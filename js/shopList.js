@@ -95,7 +95,6 @@ $(document).ready(function () {
                 }
                 let result = response.Result;
                 for (item in result) {
-                    console.log(item);
                     let url = result[item].id;
                     let data = {
                         url: "product/index.html?product=" + url,
