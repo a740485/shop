@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="./../css/footer.css" />
+        <link rel="stylesheet" href="../css/reset.css" />
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../css/nav.css" />
+        <script src="https://use.fontawesome.com/fcfc546709.js"></script>
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-3.3.1.js"
+        ></script>
+        <script src="https://cdn.staticfile.org/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <title>Backstage</title>
+        <link rel="stylesheet" href="backstage.css" />
+    </head>
+    <body>
+        <nav>
+            <div class="wrap">
+                <a class="logo" href="/">
+                    <img src="/img/logo.png" />
+                </a>
+                <div class="search-box">
+                    <input class="search" type="text" placeholder="搜尋" />
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+                <a href="/cart" class="cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a>
+
+                <!-- <a class="link" href="/register">註冊</a>
+        <a class="link" href="/login">登入</a> -->
+            </div>
+        </nav>
+
+        <div class="content">
+            <div class="wrap">
+                <div class="product-title">
+                    <h1 class="img_weight">商品圖片</h1>
+                    <h1 class="title_weight">商品標題</h1>
+                    <h1 class="price_weight">商品價格</h1>
+                    <h1 class="btn_weight">操作</h1>
+                </div>
+                <div class="product-list">
+                    <div class="product">
+                        <div class="img_box img_weight">
+                            <img src="https://picsum.photos/50/50/?random=1" />
+                            <input
+                                id="input_img_1"
+                                type="file"
+                                accept="image/*"
+                            />
+                        </div>
+                        <textarea
+                            class="title title_weight"
+                            id="product_title_1"
+                            rows="2"
+                            placeholder="商品標題"
+                        ></textarea>
+                        <input
+                            type="text"
+                            class="price price_weight"
+                            id="product_price_1"
+                            value=""
+                            placeholder="商品價格"
+                        />
+                        <div class="button btn_weight">
+                            <p>修改</p>
+                        </div>
+                    </div>
+                    <div class="product">123456</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="wrap">Footer</div>
+        </footer>
+
+        <script src="../js/config.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="./backstage.js"></script>
+    </body>
+</html>

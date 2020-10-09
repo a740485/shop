@@ -1,7 +1,7 @@
 $(document).ready(function () {
     console.log("product.js ready");
 
-    let loginUser = login_system();
+    let loginUser = login_system(true);
     // product init
     let product_id = productData();
 
