@@ -42,16 +42,22 @@
                     <h1 class="img_weight">商品圖片</h1>
                     <h1 class="title_weight">商品標題</h1>
                     <h1 class="price_weight">商品價格</h1>
+                    <h1 class="price_weight">剩餘數量</h1>
                     <h1 class="btn_weight">操作</h1>
                 </div>
                 <div class="product-list">
                     <div class="product">
                         <div class="img_box img_weight">
-                            <img src="https://picsum.photos/50/50/?random=1" />
+                            <img
+                                id="product_img_1"
+                                src="https://picsum.photos/50/50/?random=1"
+                            />
                             <input
-                                id="input_img_1"
+                                id="product_img_input_1"
                                 type="file"
                                 accept="image/*"
+                                disabled="disabled"
+                                onchange="change_img(this,1)"
                             />
                         </div>
                         <textarea
@@ -59,6 +65,7 @@
                             id="product_title_1"
                             rows="2"
                             placeholder="商品標題"
+                            disabled="disabled"
                         ></textarea>
                         <input
                             type="text"
@@ -66,12 +73,24 @@
                             id="product_price_1"
                             value=""
                             placeholder="商品價格"
+                            disabled="disabled"
                         />
-                        <div class="button btn_weight">
+                        <input
+                            type="text"
+                            class="price price_weight"
+                            id="product_amount_1"
+                            value=""
+                            placeholder="商品數量"
+                            disabled="disabled"
+                        />
+                        <div
+                            class="button btn_weight"
+                            id="product_button_1"
+                            onclick="revice(1)"
+                        >
                             <p>修改</p>
                         </div>
                     </div>
-                    <div class="product">123456</div>
                 </div>
             </div>
         </div>

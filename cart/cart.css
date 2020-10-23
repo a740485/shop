@@ -21,7 +21,7 @@ body {
 
 .content .product-detail > img {
     height: 80px;
-    margin: auto;
+    /* margin: auto; */
     margin-right: 20px;
 }
 
@@ -67,6 +67,7 @@ body {
     width: 5%;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .content .product-header {

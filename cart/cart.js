@@ -136,21 +136,30 @@ $(document).ready(function () {
                 });
 
                 $("#cart_buy").click(function () {
-                    for (let i = 0; i < data.length; i++) {
+                    // console.log(cart_data);
+                    let buy_data = [];
+                    for (let i = 0; i < cart_data.length; i++) {
                         let check = $("#cart_checked_" + i).prop("checked");
+                        // let total_price = 0;
                         if (check) {
-                            console.log(i);
-                            // let amount = $("#cart_amount_" + i).val();
-                            // let price = data[i].price;
-                            // total_price += amount * price;
-                            // total_amount += 1;
+                            // console.log(i);
+                            let amount = $("#cart_amount_" + i).val();
+                            let data = {
+                                id: cart_data[i].id,
+                                amount: amount,
+                            };
+                            buy_data.push(data);
                         }
-                        console.log(total_price);
                     }
+                    console.log(buy_data);
+                    // 再把ID傳到server進行購買
                 });
             } catch (error) {
                 console.log(error);
             }
+        },
+        error: function (res) {
+            console.log(res);
         },
     });
 });

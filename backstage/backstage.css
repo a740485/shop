@@ -12,9 +12,7 @@
     align-items: center;
     padding: 10px 20px;
     border-radius: 500px;
-}
-
-.content .product-title > h1 {
+    position: relative;
 }
 
 .content .img_weight {
@@ -38,6 +36,8 @@
     margin-left: 30px;
     width: 100px;
     text-align: center;
+    position: absolute;
+    right: 20px;
 }
 
 .content .product {
@@ -48,6 +48,7 @@
 
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .content .product ~ .product {
@@ -91,4 +92,8 @@
     justify-content: center;
     align-items: center;
     cursor: default;
+}
+
+.content .product > .button:hover {
+    background-color: rgb(154, 241, 154);
 }
